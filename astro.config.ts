@@ -22,6 +22,8 @@ import { expressiveCodeOptions, siteConfig } from "./src/site.config";
 // https://astro.build/config
 export default defineConfig({
 	site: siteConfig.url,
+	// GitHub Pages deployment configuration
+	base: process.env.NODE_ENV === 'production' ? '/JarEngine-1' : '/',
 	image: {
 		domains: ["webmention.io"],
 	},

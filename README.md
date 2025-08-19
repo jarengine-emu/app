@@ -86,11 +86,17 @@ publishDate: "2024-01-01"
 
 ## Deployment
 
-This site can be deployed to any static hosting service like:
+This site is configured for **automatic deployment to GitHub Pages**. See [DEPLOYMENT.md](./DEPLOYMENT.md) for detailed setup instructions.
 
+### Quick GitHub Pages Setup:
+1. Push this repo to GitHub
+2. Go to Settings → Pages → Source → Select "GitHub Actions"
+3. Update your username in `src/site.config.ts`
+4. Push to main branch - your site will auto-deploy!
+
+The site can also be deployed to other static hosting services like:
 - [Netlify](https://netlify.com)
 - [Vercel](https://vercel.com)
-- [GitHub Pages](https://pages.github.com)
 - [Cloudflare Pages](https://pages.cloudflare.com)
 
 ## License

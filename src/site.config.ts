@@ -26,8 +26,8 @@ export const siteConfig: SiteConfig = {
 		- In the footer found in src/components/layout/Footer.astro L:12
 	*/
 	title: "My Blog",
-	// ! Please remember to replace the following site property with your own domain, used in astro.config.ts
-	url: "https://yourdomain.com/",
+	// ! Replace 'yourusername' with your actual GitHub username for GitHub Pages deployment
+	url: "https://yourusername.github.io/JarEngine-1/",
 };
 
 // Used to generate links in both the Header & Footer.
