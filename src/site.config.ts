@@ -26,8 +26,8 @@ export const siteConfig: SiteConfig = {
 		- In the footer found in src/components/layout/Footer.astro L:12
 	*/
 	title: "My Blog",
-	// ! Replace 'yourusername' with your actual GitHub username for GitHub Pages deployment
-	url: "https://yourusername.github.io/JarEngine-1/",
+	// ! GitHub Pages URL for your actual repository
+	url: "https://jarengine-emu.github.io/JarEngine/",
 };
 
 // Used to generate links in both the Header & Footer.
