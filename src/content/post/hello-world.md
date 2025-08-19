@@ -5,7 +5,7 @@ publishDate: "2024-01-15T12:00:00Z"
 tags: ["welcome", "blog"]
 ---
 
-# Welcome to My Blog!
+# Welcome to JarEngine™!
 
 Hello and welcome to my new blog! I'm excited to share my thoughts, experiences, and learnings with you.
 

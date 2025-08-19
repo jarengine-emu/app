@@ -1,4 +1,4 @@
-# My Blog
+# JarEngine™
 
 A personal blog built with [Astro](https://astro.build) using the Cactus theme.
 

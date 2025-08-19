@@ -25,7 +25,7 @@ export const siteConfig: SiteConfig = {
 		- The link value found in src/components/layout/Header.astro L:35
 		- In the footer found in src/components/layout/Footer.astro L:12
 	*/
-	title: "My Blog",
+	title: "JarEngine™",
 	// ! GitHub Pages URL for your actual repository
 	url: "https://jarengine-emu.github.io/app/",
 };
