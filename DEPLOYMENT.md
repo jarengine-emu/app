@@ -5,7 +5,7 @@ This blog is configured for automatic deployment to GitHub Pages. Follow these s
 ## Prerequisites
 
 1. Push this repository to GitHub
-2. Make sure the repository is named `JarEngine` (or update the base path in `astro.config.ts`)
+2. Make sure the repository is named `app` (or update the base path in `astro.config.ts`)
 
 ## Setup GitHub Pages
 
@@ -19,11 +19,11 @@ This blog is configured for automatic deployment to GitHub Pages. Follow these s
 1. **Update your username**: 
    - Edit `src/site.config.ts`
    - Replace `yourusername` in the URL with your actual GitHub username
-   - Example: `https://jarengine-emu.github.io/JarEngine/`
+   - Example: `https://jarengine-emu.github.io/app/`
 
 2. **Update repository name** (if different):
-   - If your repository isn't named `JarEngine`, update the base path in `astro.config.ts`
-   - Change `/JarEngine` to `/your-repo-name`
+   - If your repository isn't named `app`, update the base path in `astro.config.ts`
+   - Change `/app` to `/your-repo-name`
 
 ## Deployment Process
 
@@ -37,7 +37,7 @@ This blog is configured for automatic deployment to GitHub Pages. Follow these s
 2. **Automatic deployment**:
    - GitHub Actions will automatically build and deploy your site
    - Check the **Actions** tab to see the deployment progress
-   - Your site will be available at: `https://jarengine-emu.github.io/JarEngine/`
+   - Your site will be available at: `https://jarengine-emu.github.io/app/`
 
 ## Custom Domain (Optional)
 

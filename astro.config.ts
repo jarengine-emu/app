@@ -23,7 +23,7 @@ import { expressiveCodeOptions, siteConfig } from "./src/site.config";
 export default defineConfig({
 	site: siteConfig.url,
 	// GitHub Pages deployment configuration
-	base: process.env.NODE_ENV === 'production' ? '/JarEngine' : '/',
+	base: process.env.NODE_ENV === 'production' ? '/app' : '/',
 	image: {
 		domains: ["webmention.io"],
 	},

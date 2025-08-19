@@ -27,7 +27,7 @@ export const siteConfig: SiteConfig = {
 	*/
 	title: "My Blog",
 	// ! GitHub Pages URL for your actual repository
-	url: "https://jarengine-emu.github.io/JarEngine/",
+	url: "https://jarengine-emu.github.io/app/",
 };
 
 // Used to generate links in both the Header & Footer.
