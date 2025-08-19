@@ -1,7 +1,7 @@
 ---
 title: "Hello World"
 description: "Welcome to my new blog! This is my first post."
-publishDate: "2024-01-15"
+publishDate: "2024-01-15T12:00:00Z"
 tags: ["welcome", "blog"]
 ---
 
