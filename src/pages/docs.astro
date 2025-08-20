@@ -1,12 +1,50 @@
 ---
+import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/Base.astro";
+
+// Get only the 4 main menu docs
+const allDocs = await getCollection("docs");
+const menuDocs = allDocs.filter(doc => 
+  doc.slug === 'load-menu' || 
+  doc.slug === 'tune-menu' || 
+  doc.slug === 'tools-menu' || 
+  doc.slug === 'settings-menu'
+);
+const sortedDocs = menuDocs.sort((a, b) => (a.data.order || 999) - (b.data.order || 999));
 ---
 
-<PageLayout meta={{ title: "Docs" }}>
-  <section class="flex flex-col items-center justify-center min-h-screen">
-    <h1 class="title mb-6">Documentation</h1>
-    <p class="mb-4 text-lg text-center max-w-xl">
-      Coming soon.
+<PageLayout meta={{ title: "Documentation" }}>
+  <section class="mb-16">
+    <h1 class="title mb-6">JarEngine™ Menu Documentation</h1>
+    <p class="mb-8 text-lg text-center max-w-2xl mx-auto">
+      Complete guides to all JarEngine menu features and capabilities.
     </p>
+  </section>
+
+  <section class="mb-12">
+    <div class="grid gap-6 md:grid-cols-2">
+      {sortedDocs.map((doc) => (
+        <article class="p-6 border border-accent-2 rounded-lg hover:border-accent transition-colors">
+          <h3 class="text-lg font-semibold mb-3">
+            <a href={`/docs/${doc.slug}/`} class="hover:text-accent transition-colors">
+              {doc.data.title}
+            </a>
+          </h3>
+          {doc.data.description && (
+            <p class="text-sm text-global-text/80 mb-4">
+              {doc.data.description}
+            </p>
+          )}
+          <div class="flex justify-end">
+            <a 
+              href={`/docs/${doc.slug}/`} 
+              class="text-sm text-link hover:text-accent transition-colors font-medium"
+            >
+              Read more →
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
   </section>
 </PageLayout>

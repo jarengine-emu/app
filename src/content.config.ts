@@ -56,4 +56,12 @@ const tag = defineCollection({
 	}),
 });
 
-export const collections = { post, note, tag };
+const docs = defineCollection({
+	schema: baseSchema.extend({
+		description: z.string().optional(),
+		order: z.number().optional(),
+		category: z.string().optional(),
+	}),
+});
+
+export const collections = { post, note, tag, docs };

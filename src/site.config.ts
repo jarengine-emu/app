@@ -1,6 +1,15 @@
 import type { SiteConfig } from "@/types";
 import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
 
+// Helper function to get the correct base path
+function getBasePath(): string {
+	// Check if we're in development or production
+	if (typeof process !== 'undefined' && process.env.NODE_ENV === 'production') {
+		return '/app';
+	}
+	return '';
+}
+
 export const siteConfig: SiteConfig = {
 	// Used as both a meta property (src/components/BaseHead.astro L:31 + L:49) & the generated satori png (src/pages/og-image/[slug].png.ts)
 	author: "NSOMatrix™",
@@ -28,20 +37,22 @@ export const siteConfig: SiteConfig = {
 	title: "JarEngine™",
 	// ! GitHub Pages URL for your actual repository
 	url: "https://jarengine-emu.github.io/app/",
+	// Base path for routing
+	base: getBasePath(),
 };
 
 // Used to generate links in both the Header & Footer.
 export const menuLinks: { path: string; title: string }[] = [
 		{
-			path: "/app/",
+			path: `${getBasePath()}/`,
 			title: "Home",
 		},
 		{
-			path: "/app/about/",
+			path: `${getBasePath()}/about/`,
 			title: "About",
 		},
 		{
-			path: "/app/docs/",
+			path: `${getBasePath()}/docs/`,
 			title: "Docs",
 		},
 ];
