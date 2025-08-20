@@ -1,6 +1,7 @@
 ---
 import { getCollection, type CollectionEntry } from "astro:content";
 import PageLayout from "@/layouts/Base.astro";
+import { siteConfig } from "@/site.config";
 
 export async function getStaticPaths() {
 	const docs = await getCollection("docs");
@@ -43,7 +44,7 @@ const { Content } = await doc.render();
 
 		<footer class="mt-12 pt-6 border-t border-accent-2">
 			<div class="flex items-center justify-between">
-				<a href="/docs/" class="text-link hover:text-accent transition-colors">
+				<a href={`${siteConfig.base}/docs/`} class="text-link hover:text-accent transition-colors">
 					← Back to Documentation
 				</a>
 			</div>

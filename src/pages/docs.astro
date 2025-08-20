@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import PageLayout from "@/layouts/Base.astro";
+import { siteConfig } from "@/site.config";
 
 // Get only the 4 main menu docs
 const allDocs = await getCollection("docs");
@@ -26,7 +27,7 @@ const sortedDocs = menuDocs.sort((a, b) => (a.data.order || 999) - (b.data.order
       {sortedDocs.map((doc) => (
         <article class="p-6 border border-accent-2 rounded-lg hover:border-accent transition-colors">
           <h3 class="text-lg font-semibold mb-3">
-            <a href={`/docs/${doc.slug}/`} class="hover:text-accent transition-colors">
+            <a href={`${siteConfig.base}/docs/${doc.slug}/`} class="hover:text-accent transition-colors">
               {doc.data.title}
             </a>
           </h3>
@@ -37,7 +38,7 @@ const sortedDocs = menuDocs.sort((a, b) => (a.data.order || 999) - (b.data.order
           )}
           <div class="flex justify-end">
             <a 
-              href={`/docs/${doc.slug}/`} 
+              href={`${siteConfig.base}/docs/${doc.slug}/`} 
               class="text-sm text-link hover:text-accent transition-colors font-medium"
             >
               Read more →

@@ -3,11 +3,9 @@ import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
 
 // Helper function to get the correct base path
 function getBasePath(): string {
-	// Check if we're in development or production
-	if (typeof process !== 'undefined' && process.env.NODE_ENV === 'production') {
-		return '/app';
-	}
-	return '';
+	// For GitHub Pages deployment, always use /app
+	// This will be overridden by astro.config.ts for local development
+	return '/app';
 }
 
 export const siteConfig: SiteConfig = {
