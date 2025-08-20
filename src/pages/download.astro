@@ -4,7 +4,7 @@ import PageLayout from "@/layouts/Base.astro";
 
 <PageLayout meta={{ title: "Download" }}>
   <section class="flex flex-col items-center justify-center min-h-screen">
-  <img src="/JE-logo.png" alt="App Logo" class="w-28 h-28 mb-6" />
+  <img src="/app/JE-logo.png" alt="App Logo" class="w-28 h-28 mb-6" />
     <h1 class="title mb-6">Download JarEngine</h1>
     <p class="mb-8 text-lg text-center max-w-xl">
       Get the latest version of the Cross Platform Capable J2ME Emulator for your OS.
@@ -55,8 +55,10 @@ import PageLayout from "@/layouts/Base.astro";
 <script>
   // Only one popover open at a time, and copy logic for both
   function closeAllPopovers() {
-    document.getElementById('linux-install-popover').classList.add('hidden');
-    document.getElementById('macos-install-popover').classList.add('hidden');
+    const linuxPopover = document.getElementById('linux-install-popover');
+    if (linuxPopover) linuxPopover.classList.add('hidden');
+    const macosPopover = document.getElementById('macos-install-popover');
+    if (macosPopover) macosPopover.classList.add('hidden');
   }
   document.addEventListener('DOMContentLoaded', function() {
     // Linux copy
@@ -78,18 +80,28 @@ import PageLayout from "@/layouts/Base.astro";
       };
     }
     // Linux popover
-    document.getElementById('linux-install-btn').onclick = function() {
-      closeAllPopovers();
-      document.getElementById('linux-install-popover').classList.remove('hidden');
-    };
+    const linuxBtn = document.getElementById('linux-install-btn');
+    if (linuxBtn) {
+      linuxBtn.onclick = function() {
+        closeAllPopovers();
+        const linuxPopover = document.getElementById('linux-install-popover');
+        if (linuxPopover) linuxPopover.classList.remove('hidden');
+      };
+    }
     // MacOS popover
-    document.getElementById('macos-install-btn').onclick = function() {
-      closeAllPopovers();
-      document.getElementById('macos-install-popover').classList.remove('hidden');
-    };
+    const macosBtn = document.getElementById('macos-install-btn');
+    if (macosBtn) {
+      macosBtn.onclick = function() {
+        closeAllPopovers();
+        const macosPopover = document.getElementById('macos-install-popover');
+        if (macosPopover) macosPopover.classList.remove('hidden');
+      };
+    }
     // Close buttons (top-right X)
-    document.getElementById('close-linux-modal').onclick = closeAllPopovers;
-    document.getElementById('close-macos-modal').onclick = closeAllPopovers;
+    const closeLinux = document.getElementById('close-linux-modal');
+    if (closeLinux) closeLinux.onclick = closeAllPopovers;
+    const closeMacos = document.getElementById('close-macos-modal');
+    if (closeMacos) closeMacos.onclick = closeAllPopovers;
     // ESC key closes modals
     document.addEventListener('keydown', function(e) {
       if (e.key === 'Escape') closeAllPopovers();
