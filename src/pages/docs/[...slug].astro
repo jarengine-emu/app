@@ -18,7 +18,7 @@ const { doc } = Astro.props;
 const { Content } = await doc.render();
 ---
 
-<PageLayout meta={{ title: doc.data.title, description: doc.data.description }}>
+<PageLayout meta={{ title: doc.data.title, description: doc.data.description || undefined }}>
 	<article class="prose prose-sm sm:prose lg:prose-lg mx-auto max-w-4xl">
 		<header class="mb-8 pb-6 border-b border-accent-2">
 			<h1 class="title mb-4">{doc.data.title}</h1>
@@ -46,9 +46,6 @@ const { Content } = await doc.render();
 				<a href="/docs/" class="text-link hover:text-accent transition-colors">
 					← Back to Documentation
 				</a>
-				<div class="text-sm text-global-text/60">
-					Last updated: {doc.data.updatedDate ? new Date(doc.data.updatedDate).toLocaleDateString() : "N/A"}
-				</div>
 			</div>
 		</footer>
 	</article>
